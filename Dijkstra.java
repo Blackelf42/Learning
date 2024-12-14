@@ -3,15 +3,15 @@ import java.util.*;
 public class Dijkstra {
 
     public static double[] dijkstra(Graph graph, int source) {
-        int vertices = graph.getVertices();
-        double[] distances = new double[vertices];
+        int verticeCount = graph.getVertices();
+        double[] distances = new double[verticeCount];
         Arrays.fill(distances, Double.POSITIVE_INFINITY);
         distances[source] = 0;
 
         FibonacciHeap<Integer> heap = new FibonacciHeap<>();
-        FibonacciHeap.Entry<Integer>[] entries = new FibonacciHeap.Entry[vertices];
+        FibonacciHeap.Entry<Integer>[] entries = new FibonacciHeap.Entry[verticeCount];
 
-        for (int i = 0; i < vertices; i++) {
+        for (int i = 0; i < verticeCount; i++) {
             entries[i] = heap.enqueue(i, distances[i]);
         }
 
